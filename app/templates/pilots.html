@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block content %}
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Surname</th>
+    <th scope="col">TypeRate</th>
+    <th scope="col">Instructor Category</th>
+  </tr>
+</thead>
+<tbody>
+{% for pilot in pilots %}
+  <tr scope="row">
+    <td>{{ pilot.id }}</td>
+    <td>{{ pilot.name }}</td>
+    <td>{{ pilot.surname }}</td>
+    <td>{{ pilot.typeRate }}</td>
+    <td>{{ pilot.instructorCategory }} </td>
+    <td>
+      <a class="btn btn-primary" href="/pilots/{{pilot.id}}">Edit Pilot</a>
+      <a class="btn btn-primary" href="{{ url_for('show_pilot_flights', pilot_id=pilot.id) }}">Show Flights</a>
+      <a class="btn btn-danger" href = "{{ url_for('insert_flight_form', uid=pilot.id) }}">Add Flight</a>      
+    </td>
+  </tr> 
+{% endfor %}
+</tbody>
+</table>
+<a href="{{ url_for('insert_pilot') }}">Add Pilot</a>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block content %}
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">date</th>
+    <th scope="col">pilot</th>
+    <th scope="col">FlightType</th>
+    <th scope="col">Takeoff Time</th>
+    <th scope="col">Duration</th>
+    <th scope="col">Landings</th>
+    <th scope="col">SFO</th>
+    <th scope="col">Mission Accomplished</th>
+  </tr>
+</thead>
+<tbody>
+{% for flight in flights %}
+  <tr scope="row">
+    <td>{{ flight.id }}</td>
+    <td>{{ flight.date }}</td>
+    <td>{{ flight.pilot }}</td>
+    <td>{{ flight.flightType }}</td>
+    <td>{{ flight.takeoff }} </td>
+    <td>{{ flight.flightDuration }} </td>
+    <td>{{ flight.landings }} </td>
+    <td>{{ flight.SFO }} </td>
+    <td>{{ flight.missionAccomplished }} </td> 
+  </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

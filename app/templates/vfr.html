@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %}
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">date</th>
+    <th scope="col">pilot</th>
+    <th scope="col">FlightType</th>
+    <th scope="col">Takeoff Time</th>
+    <th scope="col">Duration</th>
+    <th scope="col">Landings</th>
+    <th scope="col">SFO</th>
+    <th scope="col">Mission Accomplished</th>
+  </tr>
+</thead>
+<tbody>
+
+{% for vfr_flight in vfr_flights %}
+  <tr scope="row">
+    <td>{{ vfr_flight.id }}</td>
+    <td>{{ vfr_flight.date }}</td>
+    <td>{{ vfr_flight.pilot }}</td>
+    <td>{{ vfr_flight.flightType }}</td>
+    <td>{{ vfr_flight.takeoff }} </td>
+    <td>{{ vfr_flight.flightDuration }} </td>
+    <td>{{ vfr_flight.landings }} </td>
+    <td>{{ vfr_flight.SFO }} </td>
+    <td>{{ vfr_flight.missionAccomplished }} </td> 
+  </tr>
+{% endfor %}
+</tbody>
+<tr>
+    <td>Total VFR flights</td>
+    <td>{{ total_flights }}</td>
+</tr>
+<tr>
+    <td>Total hours of VFR flight</td>
+    <td>{{ total_hours }}</td>
+</tr>
+<tr>
+    <td>Total number of VFR landings</td>
+    <td>{{ total_landings }}</td>
+</tr>
+</table>
+   <!-- <a href="/user" >Add User</a> -->
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to DaidalosApp!</h1>
+    <p>Your personal flight log!</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./static/images/read_before_flight.png" alt="" width="500" height="600" style="float:left; margin:0px 5px">
+                <p></p>
+                <p>*SFO = Simulated Flameout Landing</p>
+                <p>*VFR = Visual Flight Rules</p>
+                <p>*IFR = Instrument Flight Rules</p>
+            </div>
+            <div class="col-md-6">
+                <p>This is an app for flight logging!</p>
+                <p><strong>Pilots</strong> tab provides data for the pilots and also provides edit and insert options</p>
+                <p><strong>Flights</strong> tab provides all the flights</p>
+                <p><strong>IFR</strong> tab provides all the IFR flights</p>
+                <p><strong>VFR</strong> tab provides all the VFR flights</p>
+            </div>            
+        </div>
+    </div>    
+{% endblock %}
